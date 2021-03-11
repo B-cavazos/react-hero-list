@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import HeadingComponent from './Heading'
+import HeroListComponent from './HeroList'
 import './App.css';
 
-function App() {
+let heroes = [
+  {
+    id: 1,
+    name: 'Goku',
+    universe: 'Dragon Ball Z',
+    power: 'Sayian',
+    coolnessRating: 10,
+  },
+  {
+    id: 2,
+    name: 'Ash Ketchum',
+    universe: 'Pokemon',
+    power: 'persistent',
+    coolnessRating: 6,
+  },
+  {
+    id: 3,
+    name: 'Sailor Moon',
+    universe: 'Sailor Moon',
+    power: 'Silver Crystal',
+    coolnessRating: 8,
+  },
+  {
+    id: 4,
+    name: 'ElizaBest',
+    universe: 'Alkali',
+    power: 'Knows all things',
+    coolnessRating: 15,
+  },
+]
+
+
+const App = () => {
+  let title = 'Welcome to Hero List!';
+  let subTitle = 'The place Where Heroes Live';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <HeadingComponent title={title} subTitle={subTitle}/>
+      <HeroListComponent  heroes={heroes} />
     </div>
   );
 }
